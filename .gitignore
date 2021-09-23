@@ -1,0 +1,56 @@
+# JavaScript Project
+
+## Generated Files
+_*/
+dist/
+package-lock.json
+yarn.lock
+shrinkwrap.yaml
+
+## Node.js
+node_modules/
+jspm_packages/
+bower_components/
+.nyc_output/
+coverage/
+.eslintcache
+
+# Editors
+
+## Sublime
+*.sublime-workspace
+
+## Webstorm
+.idea/
+*.iws
+
+## Visual Studio
+.vs/
+**/[Bb]in/[Dd]ebug/
+**/[Bb]in/[Rr]elease/
+[Oo]bj/
+*.sln.*
+*.vshost.*
+*.suo
+*.user
+_ReSharper*/
+*.ReSharper
+.ntvs_analysis.dat
+**/[Bb]in/Microsoft.NodejsTools.WebRole.dll
+
+# OS
+
+## Temporary files
+*.tmp
+*.log
+*~
+._*
+
+## Windows
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+## OSX
+.DS_Store
