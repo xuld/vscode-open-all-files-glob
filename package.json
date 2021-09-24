@@ -1,0 +1,75 @@
+{
+  "name": "open-files-glob",
+  "displayName": "Open All Files with Globs",
+  "version": "1.0.0",
+  "description": "Open all files in folder, support globs",
+  "main": "extension.js",
+  "publisher": "xuld",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "scripts": {
+    "build": "tsc extension.ts -t ES2018 -m commonjs",
+    "package": "npm run build && vsce package"
+  },
+  "activationEvents": [
+    "onCommand:open-files-glob.openAllFiles"
+  ],
+  "contributes": {
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Open All Files",
+        "properties": {
+          "open-files-glob.maxFilesWithoutConfirmation": {
+            "scope": "resource",
+            "type": "number",
+            "title": "Max Files Without Confirmation",
+            "default": 10,
+            "description": "Set to 0 to always request confirmation and -1 to never request confirmation."
+          },
+          "open-files-glob.defaultGlobs": {
+            "scope": "resource",
+            "type": "string",
+            "title": "Default globs",
+            "default": "**/*.{ts,tsx,jsx,js},!node_modules"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "open-files-glob.openAllFiles",
+        "title": "Open All Files"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "open-files-glob.openAllFiles",
+          "group": "navigation",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuld/vscode-open-all-files-glob.git"
+  },
+  "keywords": [
+    "vscode",
+    "open"
+  ],
+  "author": "xuld <xuld@xuld.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuld/vscode-open-all-files-glob/issues"
+  },
+  "homepage": "https://github.com/xuld/vscode-open-all-files-glob#readme",
+  "devDependencies": {
+    "typescript": "^4.4.3",
+    "vscode": "^1.1.37"
+  }
+}
